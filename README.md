@@ -1,2 +1,2 @@
-# webpack-template
-Webpack template for creating new projects
+# weather-app
+Basic weather app demonstrating the use of the Weather API
