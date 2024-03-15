@@ -8,13 +8,16 @@
 </head>
 
 <body>
-    <h1>Weather App</h1>
+    <div class="header">
+        <h1>Weather App</h1>
 
-    <div class="locationForm">
-        <label for="userLocation">Enter Location: </label>
-        <input type="text" id="userLocation" name="userLocation">
-        <button class="btn" id="submitLocation">Submit</button>
+        <form class="locationForm">
+            <!-- <label for="userLocation">Enter Location: </label> -->
+            <input type="text" id="userLocation" name="userLocation" placeholder="Location">
+            <button class="btn" id="submitLocation">Search</button>
+        </form>
     </div>
+    <div class="weatherInfoContainer"></div>
 </body>
 
 </html>
