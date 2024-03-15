@@ -2,11 +2,14 @@ import { getWeather } from "./getWeather";
 
 const infoContainer = document.querySelector('.weatherInfoContainer');
 const userLocationInput = document.querySelector('#userLocation');
+const degreeUnit = document.querySelector('.degreeUnit');
+
+let weatherData = null;
 
 async function displayWeather() {
     const userLocationValue = userLocationInput.value;
 
-    const weatherData = await getWeather(userLocationValue);
+    weatherData = await getWeather(userLocationValue);
 
     while (infoContainer.firstChild) {
         infoContainer.firstChild.remove();
@@ -31,14 +34,32 @@ async function displayWeather() {
     condition.textContent = weatherData.condition;
     infoContainer.append(condition);
 
-    const tempC = document.createElement('h4');
-    tempC.innerHTML = `${weatherData.tempC} &#8451;`;
-    infoContainer.append(tempC);
-
-    const tempF = document.createElement('h4');
-    tempF.innerHTML = `${weatherData.tempF} &#8457;`;
-    infoContainer.append(tempF)
-
+    const temp = document.createElement('h4');
+    temp.classList.add('temp');
+    if (degreeUnit.dataset.unit === 'celsius') {
+        temp.innerHTML = `${weatherData.tempC} &#8451;`;
+    } else {
+        temp.innerHTML = `${weatherData.tempF} &#8457;`;
+    }
+    infoContainer.append(temp);
 }
 
-export { displayWeather };
+function changeUnit() {
+    const temp = document.querySelector('.temp');
+
+    if (degreeUnit.dataset.unit === 'celsius') {
+        degreeUnit.innerHTML = '&#8457;';
+        degreeUnit.dataset.unit = 'farenheit';
+        if (weatherData) {
+            temp.innerHTML = `${weatherData.tempF} &#8457;`;
+        }
+    } else {
+        degreeUnit.innerHTML = '&#8451;';
+        degreeUnit.dataset.unit = 'celsius';
+        if (weatherData) {
+            temp.innerHTML = `${weatherData.tempC} &#8451;`;
+        }
+    }
+}
+
+export { displayWeather, changeUnit };

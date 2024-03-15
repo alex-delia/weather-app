@@ -9,8 +9,10 @@ body {
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: aquamarine;
-    padding: 2em 8em;
+    padding: 2em 4em;
+    gap: 4em;
 }
 
 h1 {
@@ -47,9 +49,15 @@ input:focus {
 }
 
 .locationForm {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.4em;
+}
+
+.degreeUnit {
+    flex-shrink: 0;
+    width: 3em;
+    height: 2em;
+    padding: 0;
 }
