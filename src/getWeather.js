@@ -20,7 +20,7 @@ async function getWeather(location) {
         return { city, country, region, condition, tempC, tempF };
 
     } catch (err) {
-        console.log(err);
+        console.warn('Error', err);
     }
 }
 

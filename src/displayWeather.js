@@ -22,19 +22,7 @@ async function displayWeather() {
         return;
     }
 
-    const locationName = document.createElement('h2');
-    locationName.textContent = `${weatherData.city}, ${weatherData.region}`;
-    infoContainer.append(locationName);
-
-    const locationCountry = document.createElement('h3');
-    locationCountry.textContent = weatherData.country;
-    infoContainer.append(locationCountry);
-
-    const condition = document.createElement('h4');
-    condition.textContent = weatherData.condition;
-    infoContainer.append(condition);
-
-    const temp = document.createElement('h4');
+    const temp = document.createElement('h2');
     temp.classList.add('temp');
     if (degreeUnit.dataset.unit === 'celsius') {
         temp.innerHTML = `${weatherData.tempC} &#8451;`;
@@ -42,6 +30,23 @@ async function displayWeather() {
         temp.innerHTML = `${weatherData.tempF} &#8457;`;
     }
     infoContainer.append(temp);
+
+    const condition = document.createElement('h3');
+    condition.textContent = weatherData.condition;
+    infoContainer.append(condition);
+
+    const location = document.createElement('div');
+    location.classList.add('location');
+
+    const locationName = document.createElement('h4');
+    locationName.textContent = `${weatherData.city}, ${weatherData.region}`;
+    location.append(locationName);
+
+    const locationCountry = document.createElement('h5');
+    locationCountry.textContent = weatherData.country;
+    location.append(locationCountry);
+
+    infoContainer.append(location);
 }
 
 function changeUnit() {

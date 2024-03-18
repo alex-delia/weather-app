@@ -1,30 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: aquamarine;
-    padding: 2em 4em;
-    gap: 4em;
-}
-
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
+.container {
+    display: grid;
+    grid-template-rows: 1fr 1fr auto;
+    row-gap: 1rem;
+}
+
+.header {
+    text-wrap: nowrap;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 6rem;
+    gap: 3rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 5rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
 .btn {
-    font-size: 1.5em;
-    padding: 0.5em 1.5em;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
     border: none;
-    border-radius: 0.5em;
-    background-color: white;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 255, 255);
 }
 
 .btn:hover {
@@ -32,32 +65,68 @@ h1 {
     background-color: rgb(209, 209, 209);
 }
 
-label,
-input {
-    font-size: 1.5em;
+#submitLocation {
+    background-color: rgb(234, 234, 234);
+}
+
+#submitLocation:hover {
+    background-color: rgb(190, 190, 190);
 }
 
 input {
-    height: 2em;
-    border: none;
-    border-radius: .25em;
+    background-color: rgb(255, 255, 255);
+    font-size: 2rem;
+    height: 2.5rem;
+    border: 1px solid black;
+    border-radius: .25rem;
 }
 
 input:focus {
     border: none;
-    outline: none;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .locationForm {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4em;
+    gap: 0.4rem;
 }
 
 .degreeUnit {
     flex-shrink: 0;
-    width: 3em;
-    height: 2em;
+    width: 4rem;
+    height: 3rem;
     padding: 0;
+}
+
+
+.weatherInfoContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    justify-self: center;
+    border-radius: 1rem;
+    background-color: rgb(207, 207, 207);
+    width: 50%;
+    min-width: 400px;
+    padding: 2rem;
+    text-wrap: balance;
+}
+
+.weatherInfoContainer:empty {
+    padding: 0;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
