@@ -2,7 +2,7 @@ const key = 'c779b12f7884479c9d911559241503';
 
 async function getWeather(location) {
     try {
-        const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=3`);
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=3`);
 
         const locationData = await response.json();
 
