@@ -15,9 +15,9 @@ async function displayWeather() {
         infoContainer.firstChild.remove();
     }
 
-    if (!weatherData) {
+    if (Object.hasOwn(weatherData, 'error')) {
         const errorMessage = document.createElement('h2');
-        errorMessage.textContent = 'Invalid Location';
+        errorMessage.textContent = weatherData.error.message;
         infoContainer.append(errorMessage);
         return;
     }

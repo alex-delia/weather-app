@@ -7,7 +7,8 @@ async function getWeather(location) {
         const locationData = await response.json();
 
         if (!response.ok) {
-            throw locationData.error
+            console.error('Error', locationData.error);
+            return locationData;
         }
 
         const city = locationData.location.name;
